@@ -1,0 +1,144 @@
+/* ==== css/tokens.css ====
+   AgendaKu · Design Token Sheet
+   Pre-emit critique: P5 H5 E5 S5 R5 V4
+   Slop test: pass
+*/
+
+/* ---------- Light mode ---------- */
+:root {
+  --color-bg:            oklch(0.972 0.012 75);
+  --color-surface:       oklch(0.995 0.006 75);
+  --color-surface-2:     oklch(0.955 0.018 75);
+  --color-surface-3:     oklch(0.935 0.024 75);
+  --color-border:        oklch(0.89 0.02 75);
+  --color-border-strong: oklch(0.78 0.03 60);
+  --color-ink:           oklch(0.22 0.02 60);
+  --color-ink-2:         oklch(0.42 0.02 60);
+  --color-ink-3:         oklch(0.58 0.02 60);
+  --color-ink-4:         oklch(0.70 0.02 75);
+  --color-accent:        oklch(0.60 0.17 42);
+  --color-accent-hover:  oklch(0.54 0.17 42);
+  --color-accent-ink:    oklch(0.98 0.01 75);
+  --color-accent-soft:   oklch(0.93 0.06 42);
+
+  --color-category-1:      oklch(0.60 0.17 42);
+  --color-category-1-soft: oklch(0.93 0.06 42);
+  --color-category-2:      oklch(0.52 0.10 155);
+  --color-category-2-soft: oklch(0.93 0.05 155);
+  --color-category-3:      oklch(0.52 0.10 250);
+  --color-category-3-soft: oklch(0.93 0.04 250);
+  --color-category-4:      oklch(0.56 0.12 300);
+  --color-category-4-soft: oklch(0.94 0.04 300);
+  --color-category-5:      oklch(0.65 0.13 80);
+  --color-category-5-soft: oklch(0.95 0.07 80);
+  --color-category-6:      oklch(0.58 0.14 15);
+  --color-category-6-soft: oklch(0.94 0.06 15);
+  --color-category-7:      oklch(0.54 0.11 195);
+  --color-category-7-soft: oklch(0.93 0.05 195);
+  --color-category-8:      oklch(0.52 0.04 250);
+  --color-category-8-soft: oklch(0.94 0.02 250);
+
+  --color-urgent:        oklch(0.58 0.20 25);
+  --color-urgent-soft:   oklch(0.94 0.06 25);
+  --color-warn:          oklch(0.70 0.16 75);
+  --color-warn-soft:     oklch(0.95 0.07 75);
+  --color-ok:            oklch(0.55 0.13 155);
+  --color-ok-soft:       oklch(0.93 0.05 155);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ---------- Dark mode ---------- */
+.dark {
+  --color-bg:            oklch(0.18 0.015 60);
+  --color-surface:       oklch(0.22 0.015 60);
+  --color-surface-2:     oklch(0.26 0.018 60);
+  --color-surface-3:     oklch(0.30 0.020 60);
+  --color-border:        oklch(0.32 0.020 60);
+  --color-border-strong: oklch(0.42 0.025 60);
+  --color-ink:           oklch(0.94 0.012 75);
+  --color-ink-2:         oklch(0.78 0.015 75);
+  --color-ink-3:         oklch(0.62 0.015 75);
+  --color-ink-4:         oklch(0.48 0.015 75);
+  --color-accent:        oklch(0.70 0.16 42);
+  --color-accent-hover:  oklch(0.78 0.16 42);
+  --color-accent-ink:    oklch(0.18 0.015 60);
+  --color-accent-soft:   oklch(0.30 0.07 42);
+
+  --color-category-1:      oklch(0.72 0.15 42);
+  --color-category-1-soft: oklch(0.30 0.07 42);
+  --color-category-2:      oklch(0.68 0.10 155);
+  --color-category-2-soft: oklch(0.28 0.05 155);
+  --color-category-3:      oklch(0.68 0.10 250);
+  --color-category-3-soft: oklch(0.28 0.04 250);
+  --color-category-4:      oklch(0.72 0.10 300);
+  --color-category-4-soft: oklch(0.30 0.05 300);
+  --color-category-5:      oklch(0.78 0.13 80);
+  --color-category-5-soft: oklch(0.32 0.07 80);
+  --color-category-6:      oklch(0.72 0.13 15);
+  --color-category-6-soft: oklch(0.30 0.07 15);
+  --color-category-7:      oklch(0.68 0.10 195);
+  --color-category-7-soft: oklch(0.28 0.05 195);
+  --color-category-8:      oklch(0.70 0.04 250);
+  --color-category-8-soft: oklch(0.29 0.03 250);
+
+  --color-urgent:        oklch(0.72 0.18 25);
+  --color-urgent-soft:   oklch(0.30 0.07 25);
+  --color-warn:          oklch(0.78 0.15 75);
+  --color-warn-soft:     oklch(0.32 0.07 75);
+  --color-ok:            oklch(0.70 0.12 155);
+  --color-ok-soft:       oklch(0.28 0.05 155);
+}
+
+/* ---------- Base resets ---------- */
+html, body {
+  overflow-x: clip;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+}
+
+/* Scrollbar hiding utility */
+.hide-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Pulse animation for urgent soon events */
+@keyframes pulse-border {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.pulse-border { animation: pulse-border 1.8s ease-in-out infinite; }
+
+/* Smooth modal transition */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.modal-enter { animation: fade-in 0.18s ease-out forwards; }
+
+/* Toast slide-in */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.toast-enter { animation: slide-up 0.2s ease-out forwards; }
+
+/* Explicit category color maps — no dynamic class name construction */
+.cat-token-category-1      { color: var(--color-category-1); }
+.cat-token-bg-category-1   { background-color: var(--color-category-1-soft); }
+.cat-token-category-2      { color: var(--color-category-2); }
+.cat-token-bg-category-2   { background-color: var(--color-category-2-soft); }
+.cat-token-category-3      { color: var(--color-category-3); }
+.cat-token-bg-category-3   { background-color: var(--color-category-3-soft); }
+.cat-token-category-4      { color: var(--color-category-4); }
+.cat-token-bg-category-4   { background-color: var(--color-category-4-soft); }
+.cat-token-category-5      { color: var(--color-category-5); }
+.cat-token-bg-category-5   { background-color: var(--color-category-5-soft); }
+.cat-token-category-6      { color: var(--color-category-6); }
+.cat-token-bg-category-6   { background-color: var(--color-category-6-soft); }
+.cat-token-category-7      { color: var(--color-category-7); }
+.cat-token-bg-category-7   { background-color: var(--color-category-7-soft); }
+.cat-token-category-8      { color: var(--color-category-8); }
+.cat-token-bg-category-8   { background-color: var(--color-category-8-soft); }

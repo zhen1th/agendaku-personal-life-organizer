@@ -1,0 +1,118 @@
+<!-- ==== index.html ====
+     AgendaKu · Personal Agenda & Preparation Reminder App
+     Hallmark · macrostructure: app-workbench · theme: meja-kerja
+     genre: modern-minimal · frameworks: tailwind-cdn, vue3-cdn
+     pre-emit critique: P5 H5 E4 S5 R4 V4
+     slop test: pass
+-->
+<!DOCTYPE html>
+<html lang="id" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgendaKu</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="css/tokens.css" />
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bg:              'var(--color-bg)',
+            surface:         'var(--color-surface)',
+            'surface-2':     'var(--color-surface-2)',
+            'surface-3':     'var(--color-surface-3)',
+            border:          'var(--color-border)',
+            'border-strong': 'var(--color-border-strong)',
+            ink:             'var(--color-ink)',
+            'ink-2':         'var(--color-ink-2)',
+            'ink-3':         'var(--color-ink-3)',
+            'ink-4':         'var(--color-ink-4)',
+            accent:          'var(--color-accent)',
+            'accent-hover':  'var(--color-accent-hover)',
+            'accent-ink':    'var(--color-accent-ink)',
+            'accent-soft':   'var(--color-accent-soft)',
+            'category-1':      'var(--color-category-1)',
+            'category-1-soft': 'var(--color-category-1-soft)',
+            'category-2':      'var(--color-category-2)',
+            'category-2-soft': 'var(--color-category-2-soft)',
+            'category-3':      'var(--color-category-3)',
+            'category-3-soft': 'var(--color-category-3-soft)',
+            'category-4':      'var(--color-category-4)',
+            'category-4-soft': 'var(--color-category-4-soft)',
+            'category-5':      'var(--color-category-5)',
+            'category-5-soft': 'var(--color-category-5-soft)',
+            'category-6':      'var(--color-category-6)',
+            'category-6-soft': 'var(--color-category-6-soft)',
+            'category-7':      'var(--color-category-7)',
+            'category-7-soft': 'var(--color-category-7-soft)',
+            'category-8':      'var(--color-category-8)',
+            'category-8-soft': 'var(--color-category-8-soft)',
+            urgent:        'var(--color-urgent)',
+            'urgent-soft': 'var(--color-urgent-soft)',
+            warn:          'var(--color-warn)',
+            'warn-soft':   'var(--color-warn-soft)',
+            ok:            'var(--color-ok)',
+            'ok-soft':     'var(--color-ok-soft)'
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+            mono:    ['JetBrains Mono', 'ui-monospace', 'monospace']
+          },
+          borderRadius: {
+            sm: '6px',
+            md: '10px',
+            lg: '16px'
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Vue 3 global build -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body class="bg-bg text-ink font-body min-h-screen">
+
+  <div id="app"></div>
+
+  <!-- Load order: utils → storage → calendar → reminder → components → app -->
+
+  <!-- Utils -->
+  <script src="js/utils/date.js"></script>
+  <script src="js/utils/format.js"></script>
+  <script src="js/utils/helpers.js"></script>
+
+  <!-- Core modules -->
+  <script src="js/storage.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/reminder.js"></script>
+
+  <!-- Components -->
+  <script src="js/components/conflict-warning.js"></script>
+  <script src="js/components/agenda-card.js"></script>
+  <script src="js/components/agenda-form.js"></script>
+  <script src="js/components/agenda-detail.js"></script>
+  <script src="js/components/mini-calendar.js"></script>
+  <script src="js/components/sidebar-stats.js"></script>
+  <script src="js/components/category-manager.js"></script>
+  <script src="js/components/settings-panel.js"></script>
+  <script src="js/components/import-export.js"></script>
+  <script src="js/components/post-save-actions.js"></script>
+
+  <!-- App bootstrap -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
